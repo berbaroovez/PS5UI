@@ -1,10 +1,21 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import { H3 } from "../styles/TextStyles"
+import { BackgroundImage } from "../styles/Context"
+
 export default function GameTile({ imageName, title }) {
+  const [backgroundImage, setBackgroundImage] = useContext(BackgroundImage)
+  const handleClick = e => {
+    var names = e.target.className.split(" ")
+    var backgroundName = names.slice(-1)[0]
+    console.log(backgroundName)
+    setBackgroundImage(`/images/backgrounds/${backgroundName}.jpg`)
+  }
+
   return (
-    <Wrapper>
+    <Wrapper className={imageName} onClick={handleClick}>
       <Tile
+        className={imageName}
         src={`/images/${imageName}.jpg` || "/images/spider.jpg"}
         alt={title || "Game Tile"}
       />
@@ -25,7 +36,7 @@ const Tile = styled.img`
   transition: 0.2s ease-in-out;
   :hover {
     width: 160px;
-    border: 5px solid black;
+    border: 5px solid white;
   }
 `
 

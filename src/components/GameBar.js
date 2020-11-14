@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import GameTile from "./GameTile"
+
 const GameList = [
   { title: "Call Of Duty: Black Ops - Cold War", prefix: "COD" },
   { title: "Fortnite", prefix: "fortnite" },
@@ -13,7 +14,7 @@ const GameList = [
 export default function GameBar() {
   return (
     <TileWrapper>
-      {GameList.map(game => (
+      {GameList.map((game, index) => (
         <>
           <GameTile key={game} imageName={game.prefix} title={game.title} />
         </>

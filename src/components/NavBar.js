@@ -45,9 +45,10 @@ const TextWrapper = styled.div`
 `
 const Text = styled(H3)`
   padding: 10px 20px;
+  position: relative;
   border-radius: 5px;
   :hover {
-    border: 2px black solid;
+    border: 3px white solid;
     margin-bottom: -5px; //Used to offset the border adding margin which was pushing the game bar down a little on hover
     margin-right: -2.2px; //same thing as above but to avoid the media text from getting pushed
   }
