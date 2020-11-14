@@ -5,10 +5,10 @@ import "./layout.css"
 
 function Layout({ children }) {
   return (
-      <>
-      <GlobalStyle/>
+    <>
+      <GlobalStyle />
       <main>{children}</main>
-   </>
+    </>
   )
 }
 
